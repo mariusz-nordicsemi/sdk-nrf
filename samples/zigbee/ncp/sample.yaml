@@ -16,16 +16,26 @@ tests:
   sample.zigbee.ncp.usb:
     sysbuild: true
     build_only: true
-    platform_allow: nrf52840dk/nrf52840 nrf52833dk/nrf52833 nrf21540dk/nrf52840
-      nrf52840dongle/nrf52840 nrf5340dk/nrf5340/cpuapp
+    platform_allow: nrf52840dongle/nrf52840 nrf52833dk/nrf52833 nrf21540dk/nrf52840
+      nrf5340dk/nrf5340/cpuapp
     tags: ci_build ncp sysbuild
     extra_args: FILE_SUFFIX=usb
     integration_platforms:
-      - nrf52840dk/nrf52840
+      - nrf52840dongle/nrf52840
       - nrf52833dk/nrf52833
       - nrf21540dk/nrf52840
-      - nrf52840dongle/nrf52840
       - nrf5340dk/nrf5340/cpuapp
+  sample.zigbee.ncp.usb.nrf52840dk_nrf52840:
+    sysbuild: true
+    build_only: true
+    platform_allow: nrf52840dk/nrf52840
+    tags: ci_build ncp sysbuild
+    extra_args: 
+      FILE_SUFFIX=usb 
+      SB_CONF_FILE="sysbuild_mcuboot.conf"
+    integration_platforms:
+      - nrf52840dk/nrf52840
+    tags: ci_build ncp sysbuild
   sample.zigbee.ncp.with_nrf21540ek:
     sysbuild: true
     build_only: true
